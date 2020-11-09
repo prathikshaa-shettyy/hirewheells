@@ -21,17 +21,4 @@ public class Vehicle {
     private int availability_status;
     @Column(nullable = false,length = 500)
     private String vehicle_image_url;
-    @ManyToOne
-    VehicleSubcategory vehicleSubcategory;
-    @ManyToOne
-    FuelType fuelType;
-    @ManyToOne
-    Location location;
-    @ManyToOne
-    User user;
-    @OneToMany
-    List<Booking> bookingList;
-    @OneToOne
-    Request request;
-
 }

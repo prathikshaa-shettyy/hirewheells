@@ -13,7 +13,5 @@ public class FuelType {
     private int fuel_type_id;
     @Column(nullable = false,unique = true)
     private String fuel_type;
-    @OneToMany
-    List<Vehicle> vehicles;
 
 }

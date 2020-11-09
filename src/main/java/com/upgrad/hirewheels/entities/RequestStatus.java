@@ -12,6 +12,4 @@ public class RequestStatus {
     private int request_status_id;
     @Column(length = 50,nullable = false,unique = true)
     private String request_status_name;
-    @ManyToOne
-    private Request requests;
 }

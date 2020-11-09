@@ -17,8 +17,7 @@ public class City
     private int cityId;
     @Column(nullable = false)
     private String cityName;
-    @OneToMany
-    private List<Location> locations;
+
 }
 
 

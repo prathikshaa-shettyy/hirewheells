@@ -17,9 +17,5 @@ public class Location {
     private String address;
     @Column(nullable = false,length = 6)
     private int pincode;
-    @OneToMany
-    private List<Vehicle> vehicles;
-    @OneToMany
-    private List<Booking> bookingList;
 
 }

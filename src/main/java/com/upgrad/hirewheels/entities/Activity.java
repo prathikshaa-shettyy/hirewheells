@@ -14,6 +14,5 @@ public class Activity {
     private int activity_id;
     @Column(nullable = false, unique = true)
     private String activity_type;
-    @OneToMany
-    private List<Request> requestList;
+
 }

@@ -13,6 +13,5 @@ public class Role {
     private int role_id;
     @Column(length = 50,nullable = false,unique = true)
     private String role_name;
-    @ManyToMany
-    private List<UserRole> userRoles;
+
 }

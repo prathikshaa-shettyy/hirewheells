@@ -13,7 +13,5 @@ public class VehicleCategory {
    private int  vehicle_category_id;
    @Column(length = 50,nullable = false,unique = true)
    private String vehicle_category_name;
-   @OneToMany
-    List<VehicleSubcategory> vehicleSubcategories;
 
 }
