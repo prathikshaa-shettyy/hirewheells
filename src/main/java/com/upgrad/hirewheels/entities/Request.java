@@ -15,4 +15,8 @@ public class Request {
     private String user_comments;
     @Column(length = 500)
     private String admin_comments;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "request")
+    List<RequestStatus> requestStatusList;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    Activity activity;
 }

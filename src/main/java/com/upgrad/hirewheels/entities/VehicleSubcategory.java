@@ -15,5 +15,9 @@ public class VehicleSubcategory {
     private String vehicle_subcategory_name;
     @Column(length = 10,precision = 2,nullable = false)
     private int price_per_day;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    VehicleCategory vehicleCategory;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    List<Vehicle> vehicles;
 
 }

@@ -17,6 +17,8 @@ public class City
     private int cityId;
     @Column(nullable = false)
     private String cityName;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "city")
+    private List<Location> locationList;
 
 }
 

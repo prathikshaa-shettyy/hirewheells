@@ -17,5 +17,11 @@ public class Location {
     private String address;
     @Column(nullable = false,length = 6)
     private int pincode;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    City city;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    private List<Vehicle> vehicles;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    private List<Booking> bookingList;
 
 }

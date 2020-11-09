@@ -20,6 +20,13 @@ public class Booking {
     private Date booking_date;
     @Column(length = 10,precision = 2)
     private int amount;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    Location location;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    Vehicle vehicle;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    User user;
+
 
 
 }

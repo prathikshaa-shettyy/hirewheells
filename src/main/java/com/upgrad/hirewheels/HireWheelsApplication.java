@@ -1,6 +1,8 @@
 package com.upgrad.hirewheels;
 
+import com.upgrad.hirewheels.dao.RoleDAO;
 import com.upgrad.hirewheels.dao.UserDAO;
+import com.upgrad.hirewheels.entities.Role;
 import com.upgrad.hirewheels.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +20,17 @@ public class HireWheelsApplication {
 
 		ApplicationContext context = SpringApplication.run(HireWheelsApplication.class, args);
 		UserDAO userDAO =context.getBean(UserDAO.class);
+		RoleDAO roleDAO = context.getBean(RoleDAO.class);
+
+		//Creating roles
+		Role role1 = new Role();
+		role1.setRole_name("ADMIN");
+		roleDAO.save(role1);
+
+		Role role2 = new Role();
+		role2.setRole_name("USER");
+		roleDAO.save(role2);
+
 
 		//Inserting users in the database
 		User user1 = new User();
@@ -27,6 +40,7 @@ public class HireWheelsApplication {
 		user1.setMobile_no(897169836);
 		user1.setPassword("pra");
 		user1.setWalletMoney(10000);
+		user1.setRole(role1);
 
 		User user2 = new User();
 		user2.setFirst_name("krithi");
@@ -35,6 +49,7 @@ public class HireWheelsApplication {
 		user2.setMobile_no(897169826);
 		user2.setPassword("kri");
 		user2.setWalletMoney(10000);
+		user2.setRole(role2);
 
 		User user3 = new User();
 		user3.setFirst_name("Swathi");
@@ -43,6 +58,7 @@ public class HireWheelsApplication {
 		user3.setMobile_no(897169816);
 		user3.setPassword("swa");
 		user3.setWalletMoney(10000);
+		user3.setRole(role2);
 
 		User user4 = new User();
 		user4.setFirst_name("Ruthu");
@@ -51,6 +67,7 @@ public class HireWheelsApplication {
 		user4.setMobile_no(897169835);
 		user4.setPassword("ruthu");
 		user4.setWalletMoney(10000);
+		user4.setRole(role2);
 
 		User user5 = new User();
 		user5.setFirst_name("Kishor");
@@ -59,6 +76,7 @@ public class HireWheelsApplication {
 		user5.setMobile_no(897169835);
 		user5.setPassword("Kishor");
 		user5.setWalletMoney(10000);
+		user5.setRole(role2);
 
 		//Saving all users
 		List<User> userLists= new ArrayList<>();

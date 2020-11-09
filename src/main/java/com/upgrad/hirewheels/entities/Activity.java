@@ -14,5 +14,7 @@ public class Activity {
     private int activity_id;
     @Column(nullable = false, unique = true)
     private String activity_type;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "activity")
+    private List<Request> requests;
 
 }

@@ -13,5 +13,6 @@ public class VehicleCategory {
    private int  vehicle_category_id;
    @Column(length = 50,nullable = false,unique = true)
    private String vehicle_category_name;
-
+   @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+   List<VehicleSubcategory> vehicleSubcategories;
 }

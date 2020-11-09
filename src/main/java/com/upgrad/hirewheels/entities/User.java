@@ -25,6 +25,18 @@ public class User {
     private int mobile_no;
     @Column(length = 10, precision = 2)
     private float walletMoney= 10000;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    private Role role;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    private List<Vehicle> vehicles;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    private List<Booking> bookings;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    private List<Request> requestList;
+
+    public int getUser_id() {
+        return user_id;
+    }
 
     public String getFirst_name() {
         return first_name;
@@ -48,6 +60,14 @@ public class User {
 
     public float getWalletMoney() {
         return walletMoney;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public void setFirst_name(String first_name) {

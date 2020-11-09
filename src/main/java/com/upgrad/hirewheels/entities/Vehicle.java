@@ -21,4 +21,16 @@ public class Vehicle {
     private int availability_status;
     @Column(nullable = false,length = 500)
     private String vehicle_image_url;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    VehicleSubcategory vehicleSubcategory;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    FuelType fuelType;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    Location location;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    User user;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
+    List<Booking> bookingList;
+    @OneToOne(mappedBy = "vehicle")
+    Request request;
 }
